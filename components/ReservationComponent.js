@@ -26,6 +26,8 @@ class Reservation extends Component {
     //     this.setState({showModal: !this.state.showModal});
     // }
 
+    recognizeComment = () => ({dx}) => (dx < -200) ? true : false;
+
     handleReservation() {
         //console.log(JSON.stringify(this.state));
         //this.toggleModal();
