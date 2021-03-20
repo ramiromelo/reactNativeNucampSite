@@ -82,13 +82,15 @@ class Favorites extends Component {
             );
         }
         return (
-            <FlatList
-                data={this.props.campsites.campsites.filter(
-                    campsite => this.props.favorites.includes(campsite.id)
-                )}
-                renderItem={renderFavoriteItem}
-                keyExtractor={item => item.id.toString()}
-            />
+            <Animatable.View animation="fadeInRightBig" duration={2000}>
+                <FlatList
+                    data={this.props.campsites.campsites.filter(
+                        campsite => this.props.favorites.includes(campsite.id)
+                    )}
+                    renderItem={renderFavoriteItem}
+                    keyExtractor={item => item.id.toString()}
+                />
+            </Animatable.View>
         );
     }
 }
